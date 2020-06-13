@@ -37,30 +37,31 @@ class RandomizedSet(object):
     def __init__(self):
         self.dict = {}
         self.arr = [] 
+        self.count = 0
 
     def insert(self, val):
-        if val in self.dict:
-            return False
+        if val in self.dict: return False
 
         self.arr.append(val)
-        self.dict[val] = len(self.arr) - 1
+        self.count += 1
+        self.dict[val] = self.count - 1
 
         return True
 
     def remove(self, val):
-        if not val in self.dict:
-            return False
+        if not val in self.dict: return False
 
         index = self.dict[val]
-        last_val = self.arr[len(self.arr) - 1]
+        last_val = self.arr[self.count - 1]
 
         self.arr[index] = last_val
-        self.arr = self.arr[:len(self.arr) - 1]
+        self.arr = self.arr[:self.count - 1]
         self.dict[last_val] = index
+        self.count -= 1
         
         del self.dict[val]
 
         return True    
 
     def getRandom(self):
-        return self.arr[random.randint(0, len(self.arr) - 1)]
+        return self.arr[random.randint(0, self.count - 1)]
