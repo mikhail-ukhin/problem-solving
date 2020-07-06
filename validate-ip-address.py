@@ -44,4 +44,4 @@ class Solution(object):
         if re.search(ipv4_pattern, IP): return 'IPv4'
         if re.search(ipv6_pattern, IP, re.I): return 'IPv6'
 
-        return "Neither"       
+        return "Neither"
