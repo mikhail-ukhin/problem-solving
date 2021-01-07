@@ -49,8 +49,3 @@ class Solution(object):
                 current_pow += p
 
         return result if n > 1 else 1.0 / result
-
-if __name__ == "__main__":
-    s = Solution()
-    r = s.myPow(2, -2)
-    print(r)

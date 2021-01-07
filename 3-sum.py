@@ -41,11 +41,4 @@ class Solution(object):
             else:
                 j += 1
 
-        return list([[x[0], x[1], x[2]] for x in trps])     
-
-
-if __name__ == "__main__":
-     s = Solution()
-     sums = s.threeSum([-2, -3, 0, 0, -2])
-
-     print(sums)
+        return list([[x[0], x[1], x[2]] for x in trps])

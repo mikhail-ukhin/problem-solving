@@ -39,28 +39,3 @@ class Solution(object):
 
         for x, y in neib_list:
             self.dfs(x, y)
-
-
-if __name__ == "__main__":
-    s = Solution()
-
-    arr = [
-        ["O", "X", "X", "O", "X"],
-        ["X", "O", "O", "X", "O"],
-        ["X", "O", "X", "O", "X"],
-        ["O", "X", "O", "O", "O"],
-        ["X", "X", "O", "X", "O"],
-    ]
-
-    exp = [
-        ["O", "X", "X", "O", "X"],
-        ["X", "X", "X", "X", "O"],
-        ["X", "X", "X", "O", "X"],
-        ["O", "X", "O", "O", "O"],
-        ["X", "X", "O", "X", "O"],
-    ]
-
-    s.solve(arr)
-
-    for x in arr:
-        print(x)
